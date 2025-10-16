@@ -6,7 +6,7 @@ function TaskManager() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-  // Add Task
+  
   const addTask = () => {
     if (!title.trim() || !date || !time) {
       alert("Please fill in all fields.");
@@ -16,13 +16,12 @@ function TaskManager() {
     const newTask = { title, date, time };
     setTasks([...tasks, newTask]);
 
-    // Clear input fields
     setTitle("");
     setDate("");
     setTime("");
   };
 
-  // Delete Task
+ 
   const deleteTask = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);

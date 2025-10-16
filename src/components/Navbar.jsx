@@ -6,12 +6,11 @@ function Navbar() {
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
-    e.preventDefault(); // Prevent Link default behavior
-    localStorage.removeItem("user"); // Clear session
-    navigate("/"); // ✅ Redirect to Login (landing page)
+    e.preventDefault();
+    localStorage.removeItem("user");
+    navigate("/");
   };
 
-  // Hide Navbar on Login & Register pages
   const hideNavbar =
     location.pathname === "/" || location.pathname === "/register";
 
@@ -23,8 +22,7 @@ function Navbar() {
         <div className="navbar-links">
           <Link to="/home">Home</Link>
           <Link to="/dashboard">Dashboard</Link>
-
-          {/* ✅ Use button for logout */}
+          <Link to="/calendar">Calendar</Link> {/* ✅ New tab */}
           <button
             onClick={handleLogout}
             style={{

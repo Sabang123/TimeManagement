@@ -5,7 +5,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import NotFound from "./pages/NotFound";
-import Home from "./pages/Home"; // ✅ correct path
+import Home from "./pages/Home";
+import CalendarPage from "./pages/CalendarPage"; // ✅ New Import
 import "./App.css";
 
 function Layout() {
@@ -17,15 +18,11 @@ function Layout() {
     <>
       {!hideNavbar && <Navbar />}
       <Routes>
-        {/* Landing Page = Login */}
         <Route path="/" element={<Login />} />
-        {/* Home page */}
         <Route path="/home" element={<Home />} />
-        {/* Register */}
         <Route path="/register" element={<Register />} />
-        {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* Not Found */}
+        <Route path="/calendar" element={<CalendarPage />} /> {/* ✅ New Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
